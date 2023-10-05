@@ -3,20 +3,13 @@ import { Card, Button } from "react-bootstrap";
 import ChengeFile from "../ChengeFile/ChengeFile";
 import { getCurrntDate } from "../../utils/methodsFromDate";
 import ModalShowHomeWork from "../ModalShowHomeWork/ModalShowHomeWork";
-import { getHomeWork } from "../../http/studentAPI";
 
 const LessonsCard = ({ value }) => {
   const date = getCurrntDate(value?.taskDate);
   const [showHomeWork, setShowHomeWork] = useState(false);
-  const [serverRes, setServerRes] = useState(null);
 
   const handleCloseShowHomeWork = () => setShowHomeWork(false);
-  const handleShowHomeWork = async () => {
-    const res = await getHomeWork(value._id);
-    console.log(res);
-    setServerRes(res);
-    setShowHomeWork(true);
-  };
+  const handleShowHomeWork = async () => setShowHomeWork(true);
   return (
     <Card border={value?.done ? "success" : "warning"} className="m-2">
       <Card.Header>{value?.lesson}</Card.Header>
@@ -37,7 +30,6 @@ const LessonsCard = ({ value }) => {
                 showHomeWork,
                 handleCloseShowHomeWork,
                 value,
-                serverRes,
               }}
             />
           </>
