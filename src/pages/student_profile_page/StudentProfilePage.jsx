@@ -35,9 +35,9 @@ const StudentProfilePage = () => {
   return (
     <>
       <StudentNavBar />
-      <Container>
+      <Container style={{ height: window.innerHeight }}>
         {result?.data?.status ? <AlertSuccess /> : <></>}
-        <Form className="pt-3">
+        <Form className="p-3" style={{ backgroundColor: "white" }}>
           <Form.Group as={Row} className="mb-3" controlId="formPlaintextEmail">
             <Form.Label column sm="4">
               <p>Текущий email:</p>

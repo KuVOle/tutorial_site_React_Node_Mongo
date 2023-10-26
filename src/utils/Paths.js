@@ -6,6 +6,7 @@ export const RESTORE_PASSWORD = "/restorePassword/:tokenRestorePassword";
 
 export const MAIN_STUDENT_ROUTE = "/student";
 export const STUDENT_PROFILE = "/profile";
+export const ALL_HOME_WORKS = "/allHomeWorks";
 
 export const MAIN_TEACHER_ROUTE = "/teacher";
 export const STUDENT_LIST = "/teacher/studentList";

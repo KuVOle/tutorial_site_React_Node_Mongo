@@ -54,7 +54,7 @@ const LoginPage = () => {
   return (
     <Container
       className="d-flex justify-content-center align-items-center"
-      style={{ height: window.innerHeight - 54 }}
+      style={{ height: window.innerHeight }}
     >
       <Card className=".cardWidth p-5">
         <h2 className="m-auto">Авторизация</h2>

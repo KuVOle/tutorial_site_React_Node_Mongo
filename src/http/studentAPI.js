@@ -4,6 +4,7 @@ import {
   GET_PROFILE_POINT,
   PUT_STUDENT_PROFILE,
   GET_HOME_WORK_POINT,
+  GET_ALL_HOME_WORKS_POINT,
 } from "./studentEndpoints";
 
 export const getStartInfo = async () => {
@@ -32,5 +33,9 @@ export const chengeStudentProfile = async (data) => {
 
 export const getHomeWork = async (_id) => {
   const res = await $studentHost.get(GET_HOME_WORK_POINT + _id);
+  return res;
+};
+export const getAllHomeWorks = async (page) => {
+  const res = await $studentHost.get(GET_ALL_HOME_WORKS_POINT + page);
   return res;
 };

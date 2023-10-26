@@ -1,16 +1,17 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import LoginPage from "../pages/login_page/LoginPage";
 import {
   publicRoutes,
   studentRoutes,
   teacherRoutes,
 } from "../routes/RoutesApp";
 
-//add check roles to auth routes
-
 const AppRouter = () => {
   return (
     <Routes>
+      <Route path="*" element={<LoginPage />} />
+
       {publicRoutes.map(({ path, Component }) => (
         <Route key={path} path={path} element={<Component />} />
       ))}

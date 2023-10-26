@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Button, Modal, Image } from "react-bootstrap";
+import { Button, Modal, Carousel } from "react-bootstrap";
 import { getCurrntDate } from "../../utils/methodsFromDate";
 import { getHomeWork } from "../../http/studentAPI";
 import Spiner from "../Spiner/Spiner";
@@ -8,7 +8,6 @@ const ModalShowHomeWork = ({ propsShowHomeWork }) => {
   const { showHomeWork, handleCloseShowHomeWork, value } = propsShowHomeWork;
   const date = getCurrntDate(value.taskDate);
   const [imagesURL, setImagesURL] = useState([]);
-  // const [spiner, setSpiner] = useState(false);
   useEffect(() => {
     const serverRes = async () => {
       if (showHomeWork) {
@@ -22,7 +21,6 @@ const ModalShowHomeWork = ({ propsShowHomeWork }) => {
         })
         .catch((err) => console.log(err));
   }, [showHomeWork, value?._id]);
-  console.log(imagesURL);
   return (
     <>
       <Modal show={showHomeWork} onHide={handleCloseShowHomeWork}>
@@ -38,7 +36,13 @@ const ModalShowHomeWork = ({ propsShowHomeWork }) => {
         </Modal.Body>
         <Modal.Body>
           {imagesURL.length ? (
-            imagesURL.map((img) => <Image key={img} src={img} alt="dont" />)
+            <Carousel>
+              {imagesURL.map((img) => (
+                <Carousel.Item key={img}>
+                  <img className="d-block w-100" src={img} alt="" />
+                </Carousel.Item>
+              ))}
+            </Carousel>
           ) : (
             <Spiner />
           )}

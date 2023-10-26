@@ -3,7 +3,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { MAIN_STUDENT_ROUTE, STUDENT_PROFILE } from "../../utils/Paths";
+import {
+  MAIN_STUDENT_ROUTE,
+  STUDENT_PROFILE,
+  ALL_HOME_WORKS,
+} from "../../utils/Paths";
 
 const StudentNavBar = ({ user }) => {
   console.log(user);
@@ -20,7 +24,7 @@ const StudentNavBar = ({ user }) => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
-              <Nav.Link href="#home">Домашние задания</Nav.Link>
+              <Nav.Link href={ALL_HOME_WORKS}>Домашние задания</Nav.Link>
               <Nav.Link href={STUDENT_PROFILE}>Мой профиль</Nav.Link>
               <NavDropdown title="Справочные материалы" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
