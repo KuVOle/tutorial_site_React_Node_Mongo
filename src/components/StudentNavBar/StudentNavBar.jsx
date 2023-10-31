@@ -9,8 +9,7 @@ import {
   ALL_HOME_WORKS,
 } from "../../utils/Paths";
 
-const StudentNavBar = ({ user }) => {
-  console.log(user);
+const StudentNavBar = () => {
   return (
     <Navbar
       expand="lg"
@@ -42,12 +41,7 @@ const StudentNavBar = ({ user }) => {
             </Nav>
           </Navbar.Collapse>
         </>
-        <div className="d-flex align-items-center">
-          <p className="p-2 text-light">
-            {user?.firstName} {user?.lastName}
-          </p>
-          <LogoutButtons />
-        </div>
+        <LogoutButtons />
       </Container>
     </Navbar>
   );

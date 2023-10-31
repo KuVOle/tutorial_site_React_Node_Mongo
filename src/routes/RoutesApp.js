@@ -9,6 +9,7 @@ import {
   MAIN_TEACHER_ROUTE,
   STUDENT_LIST,
   ALL_HOME_WORKS,
+  ADD_NEW_BOOK,
 } from "../utils/Paths";
 
 import LoginPage from "../pages/login_page/LoginPage";
@@ -23,6 +24,7 @@ import AllHomeWorksPage from "../pages/all_home_works/AllHomeWorksPage";
 
 import TeacherMainPage from "../pages/teacher_main_page/TeacherMainPage";
 import StudentListPage from "../pages/student_list_page/StudentListPage";
+import TeacherAddNewBook from "../pages/teacher_add_new_book/TeacherAddNewBook";
 
 export const publicRoutes = [
   { path: LOGIN_ROUTE, Component: LoginPage },
@@ -41,4 +43,5 @@ export const studentRoutes = [
 export const teacherRoutes = [
   { path: MAIN_TEACHER_ROUTE, Component: TeacherMainPage },
   { path: STUDENT_LIST, Component: StudentListPage },
+  { path: ADD_NEW_BOOK, Component: TeacherAddNewBook },
 ];

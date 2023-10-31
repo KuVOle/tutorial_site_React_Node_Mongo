@@ -11,13 +11,22 @@ const AllHomeWorksPage = () => {
   useEffect(() => {
     const data = async () => {
       const res = await getAllHomeWorks(page);
-      setStartData(res?.data?.homeWorks);
+      setStartData((prev) => [...prev, ...res?.data?.homeWorks]);
       setMaxPagesCount(res?.data?.maxPagesCount);
     };
     data();
   }, [page]);
-  console.log("data", startData);
-  console.log("maxPgaesCount", maxPagesCount);
+  const onclick = () => {
+    if (maxPagesCount >= page) {
+      setPage((prev) => ++prev);
+    }
+  };
+  const onfocus = () => {
+    console.log("Focus element");
+    if (maxPagesCount >= page) {
+      setPage((prev) => ++prev);
+    }
+  };
 
   return (
     <>
@@ -25,22 +34,15 @@ const AllHomeWorksPage = () => {
       <Container>
         <h2 className="text-center mt-2">Все домашние задания</h2>
         {startData.length ? (
-          <AllHomeWorkList homeWorks={[...startData]} />
+          <AllHomeWorkList homeWorks={{ hw: [...startData], onfocus }} />
         ) : (
-          <p>EmpryList</p>
+          <h4 className="text-center">Пусто</h4>
         )}
-
-        <Button
-          onClick={() => {
-            let newPage = page + 1;
-            setPage(newPage);
-          }}
-        >
-          Next page
-        </Button>
+        {maxPagesCount > page && (
+          <Button onClick={onclick}>Добавить: {page}</Button>
+        )}
       </Container>
     </>
   );
 };
-
 export default AllHomeWorksPage;

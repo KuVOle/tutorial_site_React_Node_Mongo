@@ -10,3 +10,4 @@ export const ALL_HOME_WORKS = "/allHomeWorks";
 
 export const MAIN_TEACHER_ROUTE = "/teacher";
 export const STUDENT_LIST = "/teacher/studentList";
+export const ADD_NEW_BOOK = "/teacher/addNewBook";

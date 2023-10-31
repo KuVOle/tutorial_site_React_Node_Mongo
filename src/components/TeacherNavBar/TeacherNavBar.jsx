@@ -3,7 +3,11 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { MAIN_TEACHER_ROUTE, STUDENT_LIST } from "../../utils/Paths";
+import {
+  MAIN_TEACHER_ROUTE,
+  STUDENT_LIST,
+  ADD_NEW_BOOK,
+} from "../../utils/Paths";
 
 const TeacherNavBar = () => {
   return (
@@ -20,6 +24,7 @@ const TeacherNavBar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link href={STUDENT_LIST}>Мои ученики</Nav.Link>
+              <Nav.Link href={ADD_NEW_BOOK}>Дообавить материалы</Nav.Link>
               <Nav.Link href="#link">Мой профиль</Nav.Link>
               <NavDropdown title="Справочные материалы" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
