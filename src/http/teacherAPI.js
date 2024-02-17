@@ -40,8 +40,8 @@ export const addNewSubject = async (newSubject) => {
 export const addNewBook = async (data, file) => {
   const { description, subject, author, classNumber } = data;
   const formData = new FormData();
-  formData.append(file, file.name);
-  // formData.append("description", description);
+  formData.append("file", file);
+  formData.append("description", description);
   formData.append("author", author);
   formData.append("subject", subject);
   formData.append("classNumber", classNumber);
